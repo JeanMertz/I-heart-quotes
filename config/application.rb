@@ -65,5 +65,14 @@ module IHeartQuotes
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Set default generators
+    config.generators do |g|
+      g.test_framework :rspec, view_specs: false, routing_specs: false,
+        helper_specs: false, controller_specs: false, fixture: true
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+      g.form_builder :simple_form
+      g.template_engine :haml
+    end
   end
 end
