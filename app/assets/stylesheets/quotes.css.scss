@@ -1,0 +1,40 @@
+body#quotes.random {
+  background: #333333;
+
+  #content {
+    @extend .offset2;
+    @extend .span8;
+    margin-top: 60px;
+    background: #E6E6E6;
+
+    @include border-radius(4px);
+    @include box-shadow(black 0 1px 6px);
+
+    #quote_field {
+      @extend .offset1;
+      @extend .span6;
+      margin-top: 30px;
+      text-align: center;
+      font-size: 26px;
+      font-family: serif;
+      font-weight: bold;
+      font-style: italic;
+      color: #999;
+
+      @include text-shadow(#333 0 1px 0);
+    }
+
+    #author_field {
+      @extend .span7;
+      text-align: right;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    #links_area {
+      @extend .span8;
+      margin: 20px 0 10px 0;
+      text-align: right;
+    }
+  }
+}
