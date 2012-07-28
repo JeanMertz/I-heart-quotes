@@ -1,4 +1,6 @@
 class QuoteSourcesController < ApplicationController
+  http_basic_authenticate_with name: 'admin', password: 'admin'
+
   # GET /quote_sources
   # GET /quote_sources.json
   def index
