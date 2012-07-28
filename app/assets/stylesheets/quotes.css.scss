@@ -4,7 +4,7 @@ body#quotes.random {
   #content {
     @extend .offset2;
     @extend .span8;
-    margin-top: 60px;
+    margin-top: 40px;
     background: #E6E6E6;
 
     @include border-radius(4px);

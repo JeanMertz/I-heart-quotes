@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'jquery-rails'
 
 group :development do
+  gem 'bootstrap-generators'
   gem 'annotate', github: 'ctran/annotate_models'
   gem 'rocco', github: 'rtomayko/rocco'
   gem 'guard'
