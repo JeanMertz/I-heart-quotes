@@ -11,6 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20120728083557) do
+
+  create_table "quote_sources", :force => true do |t|
+    t.string   "source_url"
+    t.text     "api_url"
+    t.string   "source_name"
+    t.string   "response_type",       :default => "json"
+    t.string   "quote_reference",                         :null => false
+    t.string   "permalink_reference"
+    t.string   "author_reference"
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
+  end
 
 end

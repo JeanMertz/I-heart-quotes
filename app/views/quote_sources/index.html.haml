@@ -1,0 +1,33 @@
+.page-header
+  = link_to new_quote_source_path, :class => 'btn btn-primary' do
+    %i.icon-plus.icon-white
+    New Quote source
+  %h1 Listing quote_sources
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Source url
+      %th Api url
+      %th Source name
+      %th Response type
+      %th Quote reference
+      %th Permalink reference
+      %th Author reference
+      %th
+      %th
+      %th
+
+  %tbody
+    - @quote_sources.each do |quote_source|
+      %tr
+        %td= quote_source.source_url
+        %td= quote_source.api_url
+        %td= quote_source.source_name
+        %td= quote_source.response_type
+        %td= quote_source.quote_reference
+        %td= quote_source.permalink_reference
+        %td= quote_source.author_reference
+        %td= link_to 'Show', quote_source
+        %td= link_to 'Edit', edit_quote_source_path(quote_source)
+        %td= link_to 'Destroy', quote_source, :confirm => 'Are you sure?', :method => :delete
