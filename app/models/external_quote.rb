@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: cached_quotes
+#
+#  id              :integer          not null, primary key
+#  hashed_key      :string(255)
+#  quoted_text     :text             not null
+#  author          :string(255)
+#  sourcelink      :string(255)
+#  quote_source_id :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class ExternalQuote < CachedQuote
   after_initialize :get_random_quote
 

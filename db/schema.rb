@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120728144448) do
+ActiveRecord::Schema.define(:version => 20120729142702) do
 
   create_table "cached_quotes", :force => true do |t|
     t.string   "hashed_key"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(:version => 20120728144448) do
 
   add_index "cached_quotes", ["hashed_key"], :name => "index_cached_quotes_on_hashed_key", :unique => true
   add_index "cached_quotes", ["quote_source_id"], :name => "index_cached_quotes_on_quote_source_id"
+
+  create_table "custom_quotes_quotes", :force => true do |t|
+    t.string   "quote_text", :null => false
+    t.string   "author"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "quote_sources", :force => true do |t|
     t.string   "source_url"
