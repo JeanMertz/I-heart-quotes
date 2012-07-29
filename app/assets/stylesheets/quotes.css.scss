@@ -1,10 +1,17 @@
 body#quotes.random, body#quotes.show {
   background: #333333;
 
+  .social_bar {
+    @extend .offset2;
+    @extend .span8;
+    text-align: right;
+    margin-top: 40px;
+  }
+
   #content {
     @extend .offset2;
     @extend .span8;
-    margin-top: 40px;
+    margin-top: 4px;
     background: #E6E6E6;
 
     @include border-radius(4px);

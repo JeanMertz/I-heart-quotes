@@ -1,0 +1,4 @@
+.row
+  .social_bar
+    %a.twitter-share-button{ 'data-count' => 'none', 'data-via' => 'JeanMertz', 'data-size' => 'large', href: 'http://twitter.com/share', 'data-text' => "“#{truncate(@quote.quoted_text, length: 100)}”", 'data-url' => quote_url(@quote.id)} Tweet
+    %script{src: 'http://platform.twitter.com/widgets.js', type: 'text/javascript'}
