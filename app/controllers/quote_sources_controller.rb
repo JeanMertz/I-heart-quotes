@@ -20,7 +20,7 @@ class QuoteSourcesController < ApplicationController
     @quote_source = QuoteSource.new(params[:quote_source])
 
     if @quote_source.save
-      redirect_to @quote_source, notice: 'Quote source was successfully created.'
+      redirect_to quote_sources_url, notice: 'Quote source was successfully created.'
     else
       render action: 'new'
     end
@@ -30,7 +30,7 @@ class QuoteSourcesController < ApplicationController
     @quote_source = QuoteSource.find(params[:id])
 
     if @quote_source.update_attributes(params[:quote_source])
-      redirect_to @quote_source, notice: 'Quote source was successfully updated.'
+      redirect_to quote_sources_url, notice: 'Quote source was successfully updated.'
     else
       render action: 'edit'
     end

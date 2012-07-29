@@ -69,7 +69,7 @@ inside the source code ;&ndash;)</p>
     <span class="vi">@quote_source</span> <span class="o">=</span> <span class="no">QuoteSource</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:quote_source</span><span class="o">]</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="vi">@quote_source</span><span class="o">.</span><span class="n">save</span>
-      <span class="n">redirect_to</span> <span class="vi">@quote_source</span><span class="p">,</span> <span class="n">notice</span><span class="p">:</span> <span class="s1">&#39;Quote source was successfully created.&#39;</span>
+      <span class="n">redirect_to</span> <span class="n">quote_sources_url</span><span class="p">,</span> <span class="n">notice</span><span class="p">:</span> <span class="s1">&#39;Quote source was successfully created.&#39;</span>
     <span class="k">else</span>
       <span class="n">render</span> <span class="n">action</span><span class="p">:</span> <span class="s1">&#39;new&#39;</span>
     <span class="k">end</span>
@@ -79,7 +79,7 @@ inside the source code ;&ndash;)</p>
     <span class="vi">@quote_source</span> <span class="o">=</span> <span class="no">QuoteSource</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="vi">@quote_source</span><span class="o">.</span><span class="n">update_attributes</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:quote_source</span><span class="o">]</span><span class="p">)</span>
-      <span class="n">redirect_to</span> <span class="vi">@quote_source</span><span class="p">,</span> <span class="n">notice</span><span class="p">:</span> <span class="s1">&#39;Quote source was successfully updated.&#39;</span>
+      <span class="n">redirect_to</span> <span class="n">quote_sources_url</span><span class="p">,</span> <span class="n">notice</span><span class="p">:</span> <span class="s1">&#39;Quote source was successfully updated.&#39;</span>
     <span class="k">else</span>
       <span class="n">render</span> <span class="n">action</span><span class="p">:</span> <span class="s1">&#39;edit&#39;</span>
     <span class="k">end</span>

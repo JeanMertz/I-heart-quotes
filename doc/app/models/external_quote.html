@@ -85,7 +85,10 @@
     <span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">api_url</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">url</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:request_uri</span><span class="p">)</span>
-      <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">body</span>
+      <span class="k">begin</span>
+        <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">body</span>
+      <span class="k">rescue</span>
+      <span class="k">end</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
