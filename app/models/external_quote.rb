@@ -17,6 +17,7 @@ class ExternalQuote < CachedQuote
 
   def get_random_quote
     # Get external quote if a quote source is available
+    #
     if source = QuoteSource.random
       data = get_data_from_source(source)
       data = normalize_data(data, source)
@@ -32,7 +33,10 @@ class ExternalQuote < CachedQuote
     url = URI.parse(source.api_url)
 
     if url.respond_to?(:request_uri)
-      Net::HTTP.get_response(url).body
+      begin
+        Net::HTTP.get_response(url).body
+      rescue
+      end
     end
   end
 
