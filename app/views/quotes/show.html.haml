@@ -1,3 +1,6 @@
 .row
   #content
-    = render(partial: 'quote', object: @quote) if @quote
+    - if @quote
+      = render(partial: 'quote', object: @quote)
+    - else
+      .error= t('.error')

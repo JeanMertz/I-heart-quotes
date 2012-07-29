@@ -10,6 +10,12 @@ body#quotes.random, body#quotes.show {
     @include border-radius(4px);
     @include box-shadow(black 0 1px 6px);
 
+    .error {
+      padding: 20px;
+      font-size: 16px;
+      text-align: center;
+    }
+
     #quote_field {
       @extend .offset1;
       @extend .span6;
