@@ -14,3 +14,4 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+vendor/custom_quotes/Gemfile.lock

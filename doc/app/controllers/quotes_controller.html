@@ -40,21 +40,43 @@
       <td class=code>
         <div class='highlight'><pre><span class="k">class</span> <span class="nc">QuotesController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
 
-  <span class="k">def</span> <span class="nf">random</span>
-    <span class="k">if</span> <span class="n">show_cached_quote?</span>
-      <span class="vi">@quote</span> <span class="o">=</span> <span class="no">CachedQuote</span><span class="o">.</span><span class="n">random</span>
-    <span class="k">else</span>
-      <span class="vi">@quote</span> <span class="o">=</span> <span class="no">CachedQuote</span><span class="o">.</span><span class="n">store_cache</span><span class="p">(</span><span class="no">ExternalQuote</span><span class="o">.</span><span class="n">new</span><span class="p">)</span>
-    <span class="k">end</span>
-
-    <span class="n">render</span> <span class="ss">:show</span>
-  <span class="k">end</span></pre></div>
+  <span class="k">def</span> <span class="nf">random</span></pre></div>
       </td>
     </tr>
     <tr id='section-2'>
       <td class=docs>
         <div class="pilwrap">
           <a class="pilcrow" href="#section-2">&#182;</a>
+        </div>
+        <p>First we check if a cached quote should be served, if not, we get an
+external quote.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">unless</span> <span class="n">show_cached_quote?</span>
+      <span class="vi">@quote</span> <span class="o">=</span> <span class="no">CachedQuote</span><span class="o">.</span><span class="n">store_cache</span><span class="p">(</span><span class="no">ExternalQuote</span><span class="o">.</span><span class="n">new</span><span class="p">)</span>
+    <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-3">&#182;</a>
+        </div>
+        <p>After that, if no external quote is supplied – either because no external
+sources are provided or <code>show_cached_quote?</code> returned true – we get a
+local quote from the database.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="vi">@quote</span> <span class="o">=</span> <span class="no">CachedQuote</span><span class="o">.</span><span class="n">random</span> <span class="k">unless</span> <span class="vi">@quote</span>
+
+    <span class="n">render</span> <span class="ss">:show</span>
+  <span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-4">&#182;</a>
         </div>
         <p>Show action is used to provide permalink functionality. Most polled quote
 services also provide a permalink, this link is shown as the &ldquo;source&rdquo; url.</p>
@@ -67,10 +89,10 @@ services also provide a permalink, this link is shown as the &ldquo;source&rdquo
   <span class="kp">private</span></pre></div>
       </td>
     </tr>
-    <tr id='section-3'>
+    <tr id='section-5'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-3">&#182;</a>
+          <a class="pilcrow" href="#section-5">&#182;</a>
         </div>
         <p>Weight based calculation to determine frequency of cached quotes.</p>
 
