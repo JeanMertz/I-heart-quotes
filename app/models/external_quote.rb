@@ -6,20 +6,11 @@ class ExternalQuote < CachedQuote
     if source = QuoteSource.random
       data = get_data_from_source(source)
       data = normalize_data(data, source)
-      fill_instance_variables(data, source)
-
-    # If no quote source is available, get a random cached quote
-    elsif quote = CachedQuote.random
-      quote = quote.attributes.symbolize_keys!.slice(*whitelist_attributes)
-      self.assign_attributes(quote)
+      set_instance_variables(data, source)
     end
   end
 
   private
-
-  def whitelist_attributes
-    [:quoted_text, :author, :sourcelink, :quote_source_id]
-  end
 
   # Hit the external API and parse the data back into the application.
   #
@@ -42,7 +33,7 @@ class ExternalQuote < CachedQuote
     end
   end
 
-  def fill_instance_variables(data, source)
+  def set_instance_variables(data, source)
     # TODO: Tidy up this code by renaming the database columns in
     # `quote_sources` to match those in `cached_quotes`.
     #

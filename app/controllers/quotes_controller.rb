@@ -1,11 +1,18 @@
 class QuotesController < ApplicationController
 
   def random
-    if show_cached_quote?
-      @quote = CachedQuote.random
-    else
+    # First we check if a cached quote should be served, if not, we get an
+    # external quote.
+    #
+    unless show_cached_quote?
       @quote = CachedQuote.store_cache(ExternalQuote.new)
     end
+
+    # After that, if no external quote is supplied – either because no external
+    # sources are provided or `show_cached_quote?` returned true – we get a
+    # local quote from the database.
+    #
+    @quote = CachedQuote.random unless @quote
 
     render :show
   end
