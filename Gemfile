@@ -35,4 +35,7 @@ group :test do
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'simplecov', require: false
+  gem 'vcr'
+  gem 'fakeweb'
+  gem 'launchy'
 end
