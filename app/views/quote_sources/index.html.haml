@@ -14,7 +14,7 @@
       %th Quote reference
       %th Permalink reference
       %th Author reference
-      %th
+      %th Importance integer
       %th
       %th
 
@@ -28,6 +28,6 @@
         %td= quote_source.quote_reference
         %td= quote_source.permalink_reference
         %td= quote_source.author_reference
-        %td= link_to 'Show', quote_source
+        %td= quote_source.weight
         %td= link_to 'Edit', edit_quote_source_path(quote_source)
         %td= link_to 'Destroy', quote_source, :confirm => 'Are you sure?', :method => :delete
