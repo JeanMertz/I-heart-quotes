@@ -10,6 +10,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'kue'
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'compass-rails'

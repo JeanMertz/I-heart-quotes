@@ -35,5 +35,5 @@
       - flash.each do |name, msg|
         = content_tag :div, class: "alert #{name == :error ? 'alert-error' : 'alert-success' }" do
           %a.close{ href: '#', data: { dismiss: 'alert'} } ×
-          = msg
+          != msg
       = yield

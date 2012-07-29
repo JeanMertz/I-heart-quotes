@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120729142702) do
+ActiveRecord::Schema.define(:version => 20120729194737) do
 
   create_table "cached_quotes", :force => true do |t|
     t.string   "hashed_key"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(:version => 20120729142702) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "kue_settings", :id => false, :force => true do |t|
+    t.string   "key"
+    t.text     "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "kue_settings", ["key"], :name => "index_kue_settings_on_key", :unique => true
 
   create_table "quote_sources", :force => true do |t|
     t.string   "source_url"

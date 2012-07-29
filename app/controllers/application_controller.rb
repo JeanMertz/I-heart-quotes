@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
   #  | 1000+         | 90           | almost no new records saved
   #
   def cache_weight
-    25
+    KueStore[:cache_weight].to_i
   end
+  helper_method :cache_weight
 end

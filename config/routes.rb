@@ -4,5 +4,7 @@ IHeartQuotes::Application.routes.draw do
   resources :quote_sources
   resources :quotes
 
+  put '/cache_weight' => 'quote_sources#set_cache_weight'
+
   root to: 'quotes#random'
 end

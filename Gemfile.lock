@@ -146,6 +146,8 @@ GEM
       thor (~> 0.14)
     json (1.7.4)
     kgio (2.7.4)
+    kue (0.1.0)
+      activerecord (~> 3.2.3)
     launchy (2.1.1)
       addressable (~> 2.3)
     libwebsocket (0.1.5)
@@ -271,6 +273,7 @@ DEPENDENCIES
   guard-rspec
   haml-rails
   jquery-rails
+  kue
   launchy
   pg
   rails (= 3.2.7)

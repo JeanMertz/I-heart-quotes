@@ -4,6 +4,11 @@ class QuoteSourcesController < ApplicationController
   #
   http_basic_authenticate_with name: 'admin', password: 'admin'
 
+  def set_cache_weight
+    KueStore[:cache_weight] = params[:cache][:weight]
+    redirect_to quote_sources_url, notice: "Cached quotes will now show up <strong>#{params[:cache][:weight]}% of the requests.</strong>"
+  end
+
   def index
     @quote_sources = QuoteSource.order('weight DESC')
   end
