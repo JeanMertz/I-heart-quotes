@@ -9,7 +9,7 @@ Feature: Random Quotes
     Given a quote source is available to the service
     And a cached quote exists in the database
 
-  @skip @vcr
+  @vcr
   Scenario: External quotes are shown on the page
     Given the cached quote weight is set to 0
     When I visit the I ♥ Kabisa website
@@ -32,7 +32,7 @@ Feature: Random Quotes
     When I visit the I ♥ Kabisa website
     Then a sourcelink should be visible
 
-  @skip @vcr @multiple_recordings
+  @vcr @multiple_recordings
   Scenario: Displayed quotes are random
     Given the cached quote weight is set to 50
     When I visit the I ♥ Kabisa website

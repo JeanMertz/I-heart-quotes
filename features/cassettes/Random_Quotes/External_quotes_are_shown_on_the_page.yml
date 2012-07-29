@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 06:30:17 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"ddd78a5894457f72789c2c7b698856f2"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.207799'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '273'
+      x-varnish:
+      - '2256297203'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["james_michener","science"],"quote":"An
+        age is called Dark not because the light fails to shine, but because\npeople
+        refuse to see it.\n\t\t-- James Michener, \"Space\"","link":"http://iheartquotes.com/fortune/show/52272","source":"fortune"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 06:30:17 GMT
+recorded_with: VCR 2.2.4

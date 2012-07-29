@@ -1,0 +1,521 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 06:30:18 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"7f3460eda8485378b5c384927d1db6f9"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.198814'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '202'
+      x-varnish:
+      - '848783479'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["john_heywood","platitudes"],"quote":"You
+        cannot see the wood for the trees.\n\t\t-- John Heywood","link":"http://iheartquotes.com/fortune/show/51374","source":"fortune"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 06:30:18 GMT
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 06:30:19 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"0b7665e78f5abc05a6314a0eb4210b50"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.249258'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '461'
+      x-varnish:
+      - '704313075'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["codehappy"],"quote":"Well, I would
+        -- if they realized that we -- again if -- if\r\nwe led them back to that
+        stalemate only because our\r\nretaliatory power, our seconds, or strike at
+        them after our\r\nfirst strike, would be so destructive they they couldn''t\r\nafford
+        it, that would hold them off.\r\n\r\n\t-- President Ronald Reagan, on the
+        MX missile","link":"http://iheartquotes.com/fortune/show/20307","source":"codehappy"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 06:30:19 GMT
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 06:30:19 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"534b3fb85bab5585346cac8da93b9981"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.474419'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '241'
+      x-varnish:
+      - '1917315096'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["codehappy"],"quote":"Not what has
+        happened to myself today but what has happened to others through\r\nme - that
+        should be my thought.","link":"http://iheartquotes.com/fortune/show/21781","source":"codehappy"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 06:30:19 GMT
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 06:30:20 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"99ddc84dc6e843166d03e7ad15b4fda9"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.169582'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '179'
+      x-varnish:
+      - '1917315166'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["codehappy"],"quote":"Death is nature''s
+        way of telling you to slow down.","link":"http://iheartquotes.com/fortune/show/21222","source":"codehappy"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 06:30:20 GMT
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 06:30:20 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"0d80ecc8a9af1902977f3c155cd0faa9"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.173811'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '301'
+      x-varnish:
+      - '2218048025'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["why_why_why","why"],"quote":"Why
+        is it that when you transport something by car, it''s called a shipment, but
+        when you transport something by ship, it''s called cargo? \n\t\t-- Why Why
+        Why n\u00b041","link":"http://iheartquotes.com/fortune/show/10449","source":"murphy"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 06:30:20 GMT
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 06:30:21 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"aafafa3406d1c184f337cbb9176aae27"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.288542'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '308'
+      x-varnish:
+      - '1610306959'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["simpsons_homer"],"quote":"Hey, if
+        you''re going to get mad at me every time I do something\nstupid, then I guess
+        I''ll just have to stop doing stupid things!\n\n\t\t-- Homer Simpson\n\t\t   Mr.
+        Plow","link":"http://iheartquotes.com/fortune/show/5629","source":"simpsons_homer"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 06:30:21 GMT
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 06:30:21 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"498dffc5d6dd2f6b6e1ef2add2d270e9"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.196363'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '294'
+      x-varnish:
+      - '1666279768'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["tom_stoppard","codehappy"],"quote":"James
+        Joyce -- an essentially private man who wished his total\r\nindifference to
+        public notice to be universally recognized.\r\n\r\n\t-- Tom Stoppard","link":"http://iheartquotes.com/fortune/show/16513","source":"codehappy"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 06:30:21 GMT
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 06:30:21 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"358aa1d863182225b926432dc604f1cc"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.126424'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '307'
+      x-varnish:
+      - '1610307046'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["rich_hall","codehappy"],"quote":"Pedaeration,
+        n.:\r\n\tThe perfect body heat achieved by having one leg under the\r\n\tsheet
+        and one hanging off the edge of the bed.\r\n\t\t-- Rich Hall, \"Sniglets\"","link":"http://iheartquotes.com/fortune/show/25948","source":"codehappy"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 06:30:21 GMT
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 08:05:24 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"12d76a537f8ba24d37c2124ec476a465"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.231938'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '228'
+      x-varnish:
+      - '1092810609'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["ebner","codehappy"],"quote":"Nothing
+        is so often irretrievably missed as a daily opportunity.\r\n\t\t-- Ebner-Eschenbach","link":"http://iheartquotes.com/fortune/show/29749","source":"codehappy"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 08:05:24 GMT
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 08:05:24 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"38d191ab33bfd51f99af2ab65e337351"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.282187'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '167'
+      x-varnish:
+      - '574725143'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["codehappy"],"quote":"South Dakota:
+        Closer Than North Dakota","link":"http://iheartquotes.com/fortune/show/38265","source":"codehappy"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 08:05:24 GMT
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 11:06:16 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"fd16e889a1f087a697813412fb40498a"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.216307'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '315'
+      x-varnish:
+      - '1661517497'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["captain_grose","1811_dictionary_of_the_vulgar_tongue","dictionary","vulgar"],"quote":"BANDOG.
+        A bailiff or his follower; also a very fierce\r\n  mastiff: likewise, a bandbox.
+        CANT.","link":"http://iheartquotes.com/fortune/show/55777","source":"1811_dictionary_of_the_vulgar_tongue"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 11:06:16 GMT
+recorded_with: VCR 2.2.4

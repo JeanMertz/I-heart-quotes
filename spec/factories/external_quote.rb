@@ -1,8 +1,7 @@
 FactoryGirl.define do
-  factory :cached_quote do
+  factory :external_quote do
     quoted_text           { (0...50).map{ ('a'..'z').to_a[Kernel.rand(26)] }.join }
     sequence(:author)     { |n| "name#{n}" }
-    hashed_key            { Digest::SHA1.hexdigest(quoted_text + author) }
     sequence(:sourcelink) { |n| "http://iheartquotes.com/fortune/show/#{n}" }
     quote_source_id       1
   end

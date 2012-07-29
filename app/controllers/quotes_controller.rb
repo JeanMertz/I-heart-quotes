@@ -4,7 +4,7 @@ class QuotesController < ApplicationController
     if show_cached_quote?
       @quote = CachedQuote.random
     else
-      # show external quote
+      @quote = CachedQuote.store_cache(ExternalQuote.new)
     end
 
     render :show

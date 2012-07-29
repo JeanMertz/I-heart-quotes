@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 12:26:11 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"da19c8b81d5ea12029f1a0317583be0b"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.120623'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '209'
+      x-varnish:
+      - '2258116540'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["anonymous","codehappy"],"quote":"A
+        stitch in time would have confused Einstein.\r\n\r\n\t-- Anonymous","link":"http://iheartquotes.com/fortune/show/20985","source":"codehappy"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 12:26:11 GMT
+recorded_with: VCR 2.2.4
