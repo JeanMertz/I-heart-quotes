@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>quote_source.rb</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+          <a class="source" href="../controllers/application_controller.html">application_controller.rb</a>
+          <a class="source" href="../controllers/quote_sources_controller.html">quote_sources_controller.rb</a>
+          <a class="source" href="../controllers/quotes_controller.html">quotes_controller.rb</a>
+          <a class="source" href="cached_quote.html">cached_quote.rb</a>
+          <a class="source" href="external_quote.html">external_quote.rb</a>
+          <a class="source" href="quote_source.html">quote_source.rb</a>
+      </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>quote_source.rb</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-1">&#182;</a>
+        </div>
+        <p>== Schema Information</p>
+
+<p>Table name: quote_sources</p>
+
+<p>id                  :integer          not null, primary key
+ source<em>url          :string(255)
+ api</em>url             :text             not null
+ source<em>name         :string(255)
+ response</em>type       :string(255)      default(&ldquo;json&rdquo;)
+ quote<em>reference     :string(255)      not null
+ permalink</em>reference :string(255)
+ author<em>reference    :string(255)
+ created</em>at          :datetime         not null
+ updated_at          :datetime         not null
+ weight              :integer          default(1)</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">class</span> <span class="nc">QuoteSource</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-2">&#182;</a>
+        </div>
+        <p><code>*_references</code> are used to tie external naming to the correct database names.
+For example, ilovequotes.com uses the term <code>source</code> where we use <code>author</code>.</p>
+
+<p><code>api_url</code> is the full url to poll an API whereas <code>source_url</code> is used to
+provide the correct backlinks as a thank you for their service.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">attr_accessible</span> <span class="ss">:api_url</span><span class="p">,</span> <span class="ss">:author_reference</span><span class="p">,</span> <span class="ss">:permalink_reference</span><span class="p">,</span>
+    <span class="ss">:quote_reference</span><span class="p">,</span> <span class="ss">:response_type</span><span class="p">,</span> <span class="ss">:source_name</span><span class="p">,</span> <span class="ss">:source_url</span><span class="p">,</span> <span class="ss">:weight</span>
+
+  <span class="n">has_many</span> <span class="ss">:cached_quotes</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-3">&#182;</a>
+        </div>
+        <p>Select a random row in the database. A lot slower than
+<code>offset(rand(count)).first</code>, but it needs to support a weight based value.</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">random</span>
+    <span class="n">order</span><span class="p">(</span><span class="s1">&#39;RANDOM()*weight DESC&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
+  <span class="k">end</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>

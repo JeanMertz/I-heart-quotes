@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>quote_parser.rb</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+          <a class="source" href="../controllers/application_controller.html">application_controller.rb</a>
+          <a class="source" href="../controllers/quote_sources_controller.html">quote_sources_controller.rb</a>
+          <a class="source" href="../controllers/quotes_controller.html">quotes_controller.rb</a>
+          <a class="source" href="cached_quote.html">cached_quote.rb</a>
+          <a class="source" href="external_quote.html">external_quote.rb</a>
+          <a class="source" href="quote_parser.html">quote_parser.rb</a>
+          <a class="source" href="quote_source.html">quote_source.rb</a>
+      </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>quote_parser.rb</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-1">&#182;</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">class</span> <span class="nc">QuoteParser</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">xml</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="no">Hash</span><span class="o">.</span><span class="n">from_xml</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">to_json</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-2">&#182;</a>
+        </div>
+        <p>set <code>#create_id</code> to nil to work around the forced <code>json_class</code> setting.
+This is an external restriction set on our internal application, shoo!</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="no">JSON</span><span class="o">.</span><span class="n">create_id</span> <span class="o">=</span> <span class="kp">nil</span>
+    <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">JSON</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+  <span class="k">rescue</span>
+  <span class="k">end</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>

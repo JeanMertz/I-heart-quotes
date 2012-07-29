@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>cached_quote.rb</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+          <a class="source" href="../controllers/application_controller.html">application_controller.rb</a>
+          <a class="source" href="../controllers/quote_sources_controller.html">quote_sources_controller.rb</a>
+          <a class="source" href="../controllers/quotes_controller.html">quotes_controller.rb</a>
+          <a class="source" href="cached_quote.html">cached_quote.rb</a>
+          <a class="source" href="external_quote.html">external_quote.rb</a>
+          <a class="source" href="quote_parser.html">quote_parser.rb</a>
+          <a class="source" href="quote_source.html">quote_source.rb</a>
+      </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>cached_quote.rb</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-1">&#182;</a>
+        </div>
+        <p>== Schema Information</p>
+
+<p>Table name: cached_quotes</p>
+
+<p>id              :integer          not null, primary key
+ hashed<em>key      :string(255)
+ quoted</em>text     :text             not null
+ author          :string(255)
+ sourcelink      :string(255)
+ quote<em>source</em>id :integer
+ created<em>at      :datetime         not null
+ updated</em>at      :datetime         not null</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">class</span> <span class="nc">CachedQuote</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">attr_accessible</span> <span class="ss">:hashed_key</span><span class="p">,</span> <span class="ss">:quoted_text</span><span class="p">,</span> <span class="ss">:author</span><span class="p">,</span> <span class="ss">:sourcelink</span><span class="p">,</span> <span class="ss">:quote_source_id</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-2">&#182;</a>
+        </div>
+        <p>Each stored quote is tied to the original quote source. This is currently
+not used in the application but the little overhead it causes can pay off
+if we decide to do more with the original sources.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="n">belongs_to</span> <span class="ss">:quote_source</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-3">&#182;</a>
+        </div>
+        <p>Select a random row in the database. Significantly faster than
+order(&lsquo;RANDOM()&rsquo;).</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">random</span>
+    <span class="n">offset</span><span class="p">(</span><span class="nb">rand</span><span class="p">(</span><span class="n">count</span><span class="p">))</span><span class="o">.</span><span class="n">first</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">store_cache</span><span class="p">(</span><span class="n">ext</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-4">&#182;</a>
+        </div>
+        <p>Take requested object attributes and put them in a hash</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="kp">attr</span> <span class="o">=</span> <span class="n">ext</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">symbolize_keys!</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="ss">:quoted_text</span><span class="p">,</span> <span class="ss">:author</span><span class="p">,</span> <span class="ss">:sourcelink</span><span class="p">,</span> <span class="ss">:quote_source_id</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-5">&#182;</a>
+        </div>
+        <p>Verify the required data is available or else return nil</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">return</span> <span class="k">unless</span> <span class="kp">attr</span><span class="o">[</span><span class="ss">:quoted_text</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="kp">attr</span><span class="o">[</span><span class="ss">:quote_source_id</span><span class="o">]</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-6">&#182;</a>
+        </div>
+        <p>Generate a hash based on the quote and the author of the quote (if any).
+The hash is stored in the database as a UNIQ INDEX key, to speed up
+future requests.</p>
+
+<p>Both quote and author used because, well, by human nature, we like to
+call things our own, so chances of two people having the exact same
+quote attached to their name is rather large ;&ndash;)</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="kp">attr</span><span class="o">[</span><span class="ss">:hashed_key</span><span class="o">]</span> <span class="o">=</span> <span class="no">Digest</span><span class="o">::</span><span class="no">SHA1</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(</span><span class="kp">attr</span><span class="o">[</span><span class="ss">:quoted_text</span><span class="o">]</span> <span class="o">+</span> <span class="kp">attr</span><span class="o">[</span><span class="ss">:author</span><span class="o">]</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-7">&#182;</a>
+        </div>
+        <p>Store or retrieve if the hash already exists.</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="n">where</span><span class="p">(</span><span class="n">hashed_key</span><span class="p">:</span> <span class="kp">attr</span><span class="o">[</span><span class="ss">:hashed_key</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">first_or_create!</span><span class="p">(</span><span class="kp">attr</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
