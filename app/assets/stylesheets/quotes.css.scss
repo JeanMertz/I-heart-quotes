@@ -19,6 +19,7 @@ body#quotes.random {
       font-family: serif;
       font-weight: bold;
       font-style: italic;
+      line-height: 1.3em;
       color: #999;
 
       @include text-shadow(#333 0 1px 0);
