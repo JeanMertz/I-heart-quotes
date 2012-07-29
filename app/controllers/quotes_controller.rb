@@ -10,6 +10,15 @@ class QuotesController < ApplicationController
     render :show
   end
 
+  # Show action is used to provide permalink functionality. Most polled quote
+  # services also provide a permalink, this link is shown as the "source" url.
+  #
+  def show
+    @quote = CachedQuote.find(params[:id])
+  end
+
+  private
+
   # Weight based calculation to determine frequency of cached quotes.
   #
   def show_cached_quote?
