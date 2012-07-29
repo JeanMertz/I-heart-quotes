@@ -10,13 +10,17 @@ module CustomQuotes
       #
       @quote = Quote.offset(rand(Quote.count)).first
 
-      # Convert quote to a sliced hash with only the allowed elements.
-      #
-      quote = @quote.attributes.symbolize_keys!.slice(:author, :quote_text)
+      if @quote
+        # Convert quote to a sliced hash with only the allowed elements.
+        #
+        quote = @quote.attributes.symbolize_keys!.slice(:author, :quote_text)
 
-      # Add the sourcelink to the hash and render the result.
-      #
-      render json: quote.merge({sourcelink: quote_url(@quote.id)})
+        # Add the sourcelink to the hash and render the result.
+        #
+        render json: quote.merge({sourcelink: quote_url(@quote.id)})
+      else
+        render json: {}
+      end
     end
 
     def index
