@@ -32,7 +32,7 @@ group :test do
   gem 'rails3-generators', github: 'indirect/rails3-generators'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'capybara'
   gem 'simplecov', require: false
   gem 'vcr'

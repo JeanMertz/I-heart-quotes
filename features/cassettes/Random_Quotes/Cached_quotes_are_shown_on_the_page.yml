@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 06:32:34 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"e0c3584eb59fc0e9ac75caa4aced616d"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.139192'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '222'
+      x-varnish:
+      - '761452631'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["dyer","codehappy"],"quote":"A continuing
+        flow of paper is sufficient to continue the flow of paper.\r\n\t\t-- Dyer","link":"http://iheartquotes.com/fortune/show/34796","source":"codehappy"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 06:32:34 GMT
+recorded_with: VCR 2.2.4

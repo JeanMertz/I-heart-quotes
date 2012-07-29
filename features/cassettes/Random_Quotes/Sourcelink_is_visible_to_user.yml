@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 06:30:18 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"5c9e62c6ef604ac676f551687aa090d7"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.151314'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '759'
+      x-varnish:
+      - '1666279442'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["codehappy"],"quote":"TOP TEN Least
+        Used Slang Terms For A Home Run\r\n\r\n10. \"Spanking the horsehide monkey\"
+        \r\n9. \"Dropping mom off at the rest home\" \r\n8. \"Going deeper than the
+        Russian debt\" \r\n7. \"A Mexican strikeout\" \r\n6. \"Impeaching President
+        Baseball\" \r\n5. \"Making contact with a pitched ball in such a way as to
+        cause it to leave the confines of the playing field while remaining in fair
+        territory\" \r\n4. \"Allying the McBall\" \r\n3. \"A homer-sexual\" (joke
+        sent in by Adam Kaye, age 12) \r\n2. \"A wonderful excuse for your teammates
+        to pat you on the ass\" \r\n1. \"Interrupting the drunken slugfest in the
+        bleachers\"","link":"http://iheartquotes.com/fortune/show/42023","source":"codehappy"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 06:30:18 GMT
+recorded_with: VCR 2.2.4

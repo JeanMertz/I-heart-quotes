@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.iheartquotes.com/api/v1/random.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sun, 29 Jul 2012 06:30:17 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - keep-alive
+      etag:
+      - ! '"a388a35b746cb4f57f0e86cb68b967e5"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.208709'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '186'
+      x-varnish:
+      - '334649828'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+    body:
+      encoding: US-ASCII
+      string: ! '{"json_class":"Fortune","tags":["codehappy"],"quote":"The Academy
+        Awards were first broadcast in color in 1966.","link":"http://iheartquotes.com/fortune/show/40978","source":"codehappy"}'
+    http_version: '1.1'
+  recorded_at: Sun, 29 Jul 2012 06:30:17 GMT
+recorded_with: VCR 2.2.4

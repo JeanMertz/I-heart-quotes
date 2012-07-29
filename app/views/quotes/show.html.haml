@@ -1,3 +1,3 @@
 .row
   #content
-    = render(partial: 'quote')
+    = render(partial: 'quote', object: @quote) if @quote

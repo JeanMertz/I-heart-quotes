@@ -2,7 +2,7 @@ class QuotesController < ApplicationController
 
   def random
     if show_cached_quote?
-      # show cached quote
+      @quote = CachedQuote.random
     else
       # show external quote
     end

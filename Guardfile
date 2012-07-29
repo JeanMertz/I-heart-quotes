@@ -21,7 +21,7 @@ guard 'rspec', cli: '--color --fail-fast --format progress' do
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
 end
 
-guard 'cucumber', cli: '--no-profile --no-snippets --color --strict --format pretty', run_all: { cli: '--format progress' } do
+guard 'cucumber', cli: '--no-profile --no-snippets --color --strict --tags ~@skip --format pretty', run_all: { cli: '--format progress' } do
   watch(%r{^features/.+\.feature$})
   watch(%r{^features/support/.+$})                      { 'features' }
   watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }

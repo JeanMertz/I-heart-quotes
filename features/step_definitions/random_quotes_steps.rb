@@ -1,21 +1,12 @@
 # encoding: UTF-8
 
-Given /^I know my way around the interwebs$/ do
-  # let's just make this an assumption
-end
-
-When /^I visit the I <3 Kabisa website$/ do
+When /^I visit the I ♥ Kabisa website$/ do
   visit '/'
   current_path.should eq('/')
 end
 
 Then /^I should be greeted by a quote$/ do
-  page.should have_xpath("//div[@id='quote_field']", text: /^“.*”$/)
-end
-
-Given /^I am on the random quotes page$/ do
-  visit '/'
-  current_path.should eq('/')
+  page.should have_xpath("//div[@id='quote_field']", text: /.?/)
 end
 
 When /^I click the (permalink|sourcelink)$/ do |link|
@@ -27,15 +18,15 @@ Then /^I should be redirected$/ do
   current_url.should include(@link_url)
 end
 
-Given /^a sourcelink is visible$/ do
+Then /^a sourcelink should be visible$/ do
   page.should have_css('a.sourcelink')
 end
 
 When /^I reload the page "(.*?)" times$/ do |reload|
   @quotes = []
-  reload.to_i.times do |i|
+  reload.to_i.times do
     visit '/'
-    @quotes[i] = find('div#quote_field').native.inner_text
+    @quotes << find('div#quote_field').native.inner_text
   end
 end
 

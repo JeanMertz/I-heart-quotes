@@ -1,9 +1,13 @@
 .row
-  #quote_field= "“#{SecureRandom.base64}”"
+  #quote_field= "“#{quote.quoted_text}”"
 .row
-  #author_field – Jean Mertz
+  #author_field= "– #{quote.author}"
 .row
   #links_area
-    %a.permalink{ href: 'http://example.com' } permalink
+    - if controller.action_name == 'show'
+      %strong
+        %a.randomize{ href: root_url } back to random quotes
+      |
+    %a.permalink{ href: quote_url(quote.id) } permalink
     |
-    %a.sourcelink{ href: 'http://example.com' } sourcelink
+    %a.sourcelink{ href: quote.sourcelink } sourcelink
