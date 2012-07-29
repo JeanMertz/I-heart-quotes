@@ -1,0 +1,14 @@
+= simple_form_for @quote do |form|
+
+  -if @quote.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@quote.errors.count, "error")} prohibited this #{Quote.name.titleize} from being saved:"
+      %ul
+        - @quote.errors.full_messages.each do |msg|
+          %li= msg
+
+  = form.input :quote_text, :label => 'Quote Text'
+  = form.input :author, :label => 'Author'
+
+  .actions
+    = form.button :submit

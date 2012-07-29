@@ -10,8 +10,8 @@
     / Le HTML5 shim, for IE6-8 support of HTML5 elements
     /[if lt IE 9]
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    = stylesheet_link_tag    'application'
-    = javascript_include_tag 'application'
+    = stylesheet_link_tag    'custom_quotes/application'
+    = javascript_include_tag 'custom_quotes/application'
     = csrf_meta_tags
 
   %body{ id: controller.controller_name, class: controller.action_name }
@@ -26,11 +26,11 @@
           .nav-collapse
             %ul.nav
               %li
-                %a{ href: root_url } Quotes
+                %a{ href: main_app.root_url } Quotes
               %li
-                %a{ href: quote_sources_path } Add quote sources
+                %a{ href: main_app.quote_sources_path } Add quote sources
               %li
-                %a{ href: custom_quotes_path } Add custom quotes
+                %a{ href: root_path } Add custom quotes
     .container
       - flash.each do |name, msg|
         = content_tag :div, class: "alert #{name == :error ? 'alert-error' : 'alert-success' }" do

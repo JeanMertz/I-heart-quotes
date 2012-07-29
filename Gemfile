@@ -15,6 +15,8 @@ gem 'haml-rails'
 gem 'simple_form'
 gem 'jquery-rails'
 
+gem 'custom_quotes', path: 'vendor/custom_quotes'
+
 group :development do
   gem 'bootstrap-generators'
   gem 'annotate', github: 'ctran/annotate_models'
