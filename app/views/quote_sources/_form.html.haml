@@ -5,11 +5,11 @@
       %h2= "#{pluralize(@quote_source.errors.count, "error")} prohibited this #{QuoteSource.name.titleize} from being saved:"
       %ul
         - @quote_source.errors.full_messages.each do |msg|
-          %li= msg  
+          %li= msg
 
+  = form.input :source_name, :label => 'Source Name'
   = form.input :source_url, :label => 'Source Url'
   = form.input :api_url, :label => 'Api Url'
-  = form.input :source_name, :label => 'Source Name'
   = form.input :response_type, :label => 'Response Type'
   = form.input :quote_reference, :label => 'Quote Reference'
   = form.input :permalink_reference, :label => 'Permalink Reference'
